@@ -19,14 +19,19 @@ const initialState = [
         id:4,
         title: 'Task 4',
         isDone: false
+    },
+    {
+        id:5,
+        title: 'Task 5',
+        isDone: true
     }
 ];
 
 
-export default function(state = initialState, { type, payload}){
+export default function(state = initialState, { type, payload }){
     switch(type){
         case TODOS_REMOVE_TODO:
-            return state.filter(todo => todo.id != payload)
+            return state.filter(todo => todo.id != payload)        
     }
     return state
 }
