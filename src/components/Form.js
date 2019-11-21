@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function FormTodo({ onSubmit }) {
+function FormTodo({ addTodo }) {
     
     const classes = useStyles();
 
@@ -31,8 +31,8 @@ function FormTodo({ onSubmit }) {
         name: ''
     }
 
-    function onFormSubmit(values, { resetForm }){
-        onSubmit(values);
+    function onFormSubmit(values, { resetForm }){        
+        addTodo(values);
         resetForm();
     }
 

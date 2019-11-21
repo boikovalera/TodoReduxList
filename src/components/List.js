@@ -2,6 +2,7 @@ import React from 'react'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -17,17 +18,21 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function ListTodo({todos, removeTodo}) {
+function ListTodo({todos, toggleTodo, removeTodo}) {
 
     const classes = useStyles();
 
     return (
         <List component="nav" aria-label="secondary mailbox folders">
             {todos.map(todo => (
-                <ListItem button 
-                    key={todo.id} className={todo.isDone ? classes.selected : classes.noselected}
-                    onClick={removeTodo.bind(null, todo.id)}>
-                    <ListItemText primary={todo.title} />
+                <ListItem button className={todo.isDone ? classes.selected : classes.noselected}
+                    key={todo.id} 
+                    onClick={toggleTodo.bind(null, todo.id)}
+                >
+                <ListItemText primary={todo.title} />
+                <Button type="submit" variant="contained" color="default" onClick={removeTodo.bind(null, todo.id)}>
+                    Del
+                </Button>
                 </ListItem>                        
             ))}            
         </List>        
