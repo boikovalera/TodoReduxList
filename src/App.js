@@ -11,6 +11,8 @@ const store = createStore(rootReducer)
 
 console.log(store.getState());
 
+//https://codesandbox.io/s/todos-hc4gv
+
 function App() {
   return (
     <Provider store={store}>
