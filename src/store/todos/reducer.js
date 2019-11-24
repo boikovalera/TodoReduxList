@@ -1,4 +1,4 @@
-import { TODOS_REMOVE_TODO, TODOS_TOGGLE_TODO } from './actions'
+import { TODOS_REMOVE_TODO, TODOS_TOGGLE_TODO, TODOS_ADD_TODO } from './actions'
 const initialState = [
     {
         id: 1,
@@ -38,7 +38,15 @@ export default function (state = initialState, { type, payload }) {
                     todo.isDone = todo.isDone ? false : true;                    
                 }
                 return todo;
-            })            
+            })   
+        case TODOS_ADD_TODO:                        
+            return [...state, 
+                {                    
+                    id: Date.now(),
+                    title: payload.name,
+                    isDone: false
+                }];
+        default:
+            return state;        
     }
-    return state
 }

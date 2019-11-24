@@ -3,15 +3,11 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './store/reducer';
 
-import Filters from './components/Filters'
+import Filters from './components/FiltersContainer'
 import List from './components/ListContainer'
-import Form from './components/Form'
+import Form from './components/FormContainer'
 
 const store = createStore(rootReducer)
-
-console.log(store.getState());
-
-//https://codesandbox.io/s/todos-hc4gv
 
 function App() {
   return (

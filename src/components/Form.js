@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({
     root: {        
@@ -71,3 +72,7 @@ function FormTodo({ addTodo }) {
 }
 
 export default FormTodo
+
+FormTodo.propTypes = {
+    addTodo: PropTypes.func.isRequired
+}

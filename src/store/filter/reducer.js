@@ -1,8 +1,12 @@
 import { FILTER_ALL } from '../../filters';
-const initialState = FILTER_ALL
+import { FILTER_CHANGE_FILTER } from './actions';
+const initialState = FILTER_ALL;
 
-
-
-export default function(state = initialState, { type, payload}){
-    return state;
+export default function(state = initialState, { type, payload }) {
+    switch (type) {
+        case FILTER_CHANGE_FILTER:
+            return payload;
+        default:
+            return FILTER_ALL;    
+    }   
 }

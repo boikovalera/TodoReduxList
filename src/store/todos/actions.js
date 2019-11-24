@@ -9,3 +9,9 @@ export const toggleTodo = (id)=>({
     type: TODOS_TOGGLE_TODO,
     payload: id
 });
+
+export const TODOS_ADD_TODO = 'TODOS_ADD_TODO';
+export const addTodo = payload => ({
+    type: 'TODOS_ADD_TODO',
+    payload
+});

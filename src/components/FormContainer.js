@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Form from './Form';
-import { addTodo } from '../store/form/actions';
+import { addTodo } from '../store/todos/actions';
 
 function mapStateToProps(state){
     return {
